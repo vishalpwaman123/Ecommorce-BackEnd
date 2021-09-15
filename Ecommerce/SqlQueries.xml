@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<SignUp>
+		<![CDATA[ INSERT INTO fact_user_master (UserName, EmailID, SecurePassword) VALUES (@UserName, @EmailID, @SecurePassword);]]>
+	</SignUp>
+	<Login>
+		<![CDATA[
+		SELECT UserName, EmailID, UserID
+		FROM fact_user_master
+		WHERE (EmailID=@UserName AND SecurePassword=@SecurePassword) OR (UserName=@UserName AND SecurePassword=@SecurePassword);
+]]>
+	</Login>
+</Queries>
